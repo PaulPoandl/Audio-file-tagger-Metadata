@@ -20,9 +20,9 @@ This repository contains a batch script (`tagger.bat`) and associated Python scr
    git clone https://github.com/yourusername/audio-files-metadata-manager.git
    ```
 2. **Run the Batch Script:**
-   Double-click `audio_manager.bat` or run it from the command line:
+   Double-click `tagger.bat` or run it from the command line:
    ```sh
-   audio_manager.bat
+   tagger.bat
    ```
 
 Follow the on-screen instructions to choose your desired operation.
