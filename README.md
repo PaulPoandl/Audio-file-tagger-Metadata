@@ -1,5 +1,7 @@
 # Audio-file-tagger-Metadata
 
+![Screenshot 2024-07-20 185451](https://github.com/user-attachments/assets/30d0c089-f791-483b-a205-a0c56db80c09)
+
 This repository contains a batch script (`tagger.bat`) and associated Python scripts for managing audio file metadata. The Audio Files Tagger Metadata is a tool designed to facilitate the process of adding cover art, renaming files, and embedding metadata in audio files, specifically supporting FLAC, M4A, and MP3 formats. This tool is particularly useful for files downloaded via JDownloader.
 
 ## Features
@@ -31,4 +33,3 @@ Follow the on-screen instructions to choose your desired operation.
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-```
