@@ -30,6 +30,3 @@ This repository contains a batch script (`tagger.bat`) and associated Python scr
 Follow the on-screen instructions to choose your desired operation.
 
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
