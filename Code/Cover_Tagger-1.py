@@ -7,7 +7,6 @@ from mutagen.mp4 import MP4, MP4Cover
 from mutagen.flac import FLAC
 from mutagen.id3 import ID3, APIC
 
-# Function to open a file dialog and return the selected file path
 def choose_file():
     root = Tk()
     root.withdraw()
@@ -15,19 +14,17 @@ def choose_file():
     root.destroy()
     return file_selected
 
-# Function to open a directory dialog and return the selected directory path
 def choose_directory():
     root = Tk()
     root.withdraw()
     folder_selected = filedialog.askdirectory()
     root.destroy()
     return folder_selected
-
-# Function to get a list of all files in a directory with the specified file extensions
+    
 def get_files(directory, file_extensions):
     return [f for f in os.listdir(directory) if f.lower().endswith(file_extensions)]
 
-# Function to embed a cover image into an MP3 file
+
 def embed_cover_mp3(file_path, cover_path):
     print(f"Embedding cover image {cover_path} in file {file_path}")
     audio = MP3(file_path, ID3=ID3)
@@ -43,7 +40,6 @@ def embed_cover_mp3(file_path, cover_path):
         )
     audio.save()
 
-# Function to embed a cover image into an MP4 file
 def embed_cover_mp4(file_path, cover_path):
     print(f"Embedding cover image {cover_path} in file {file_path}")
     audio = MP4(file_path)
@@ -51,7 +47,7 @@ def embed_cover_mp4(file_path, cover_path):
         audio["covr"] = [MP4Cover(img.read(), imageformat=MP4Cover.FORMAT_JPEG)]
     audio.save()
 
-# Function to embed a cover image into a FLAC file
+
 def embed_cover_flac(file_path, cover_path):
     print(f"Embedding cover image {cover_path} in file {file_path}")
     audio = FLAC(file_path)
@@ -65,16 +61,16 @@ def embed_cover_flac(file_path, cover_path):
         ]
     audio.save()
 
-# Function to find a matching cover image for a music file
+
 def find_matching_cover(music_file, cover_files):
     music_file_base = os.path.splitext(music_file)[0]
 
-    # Check for exact match
+
     for cover in cover_files:
         if cover == music_file_base + os.path.splitext(cover)[1]:
             return cover
 
-    # Check for partial match
+
     words = music_file_base.split()
     for i in range(1, min(len(words), 5)):
         prefix = ' '.join(words[:i])
@@ -83,7 +79,7 @@ def find_matching_cover(music_file, cover_files):
                 return cover
     return None
 
-# Main function
+
 def main():
     while True:
         mode = input(
@@ -144,7 +140,7 @@ def main():
                             embed_cover_flac(music_path, cover_path)
                         print(f"Embedded cover for {music_file}")
 
-                        # Verify that the cover was embedded
+               
                         if music_file.endswith(".mp3"):
                             audio = MP3(music_path)
                             if audio.tags.get("APIC"):
@@ -203,7 +199,7 @@ def main():
                                 embed_cover_flac(music_path, cover_path)
                             print(f"Embedded cover for {music_file}")
 
-                            # Verify that the cover was embedded
+         
                             if music_file.endswith(".mp3"):
                                 audio = MP3(music_path)
                                 if audio.tags.get("APIC"):
