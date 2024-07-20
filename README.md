@@ -19,7 +19,7 @@ This repository contains a batch script (`tagger.bat`) and associated Python scr
 
 1. **Clone the Repository:**
    ```sh
-   git clone https://github.com/yourusername/audio-files-metadata-manager.git
+   git clone https://github.com/PaulPoandl/Audio-file-tagger-Metadata-.git
    ```
 2. **Run the Batch Script:**
    Double-click `tagger.bat` or run it from the command line:
